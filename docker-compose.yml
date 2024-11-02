@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  python-app:
+    build: .
+    volumes:
+      - ./:/app # ローカルのディレクトリをマウント
+      - ~/.ssh:/root/.ssh  # ローカルPCのsshキーをコンテナにマウント
+    stdin_open: true  # 標準入力をオープンにする
+    tty: true         # 仮想端末を使用動
